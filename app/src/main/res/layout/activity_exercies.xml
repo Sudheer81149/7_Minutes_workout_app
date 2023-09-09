@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExerciesActivity">
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/exerciestoolbar"
+        android:theme="@style/Toolbarthem"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        app:titleTextColor="@color/colorPrimary"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GET READ FOR"
+        android:textSize="22sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/flRestView"
+        android:id="@+id/tvtitle" />
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/flRestView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exerciestoolbar"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/item_circular_color_accent_broder" >
+      <ProgressBar
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:id="@+id/progresBar"
+          style="?android:attr/progressBarStyleHorizontal"
+          android:layout_gravity="center"
+          android:background="@drawable/circular_progress_gray"
+          android:progressDrawable="@drawable/circular_progress_bar"
+          android:indeterminate="false"
+          android:max="10"
+          android:progress="100"
+          android:rotation="-90" />
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/item_circular_color_accent_background">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvtimmer"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                tools:text="10"/>
+        </LinearLayout>
+        
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvUpcomingLable"
+        android:text="UPCOMING EXERCIES: "
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvUpcomingExerciseName"
+        app:layout_constraintTop_toBottomOf="@+id/flRestView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvUpcomingExerciseName"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpcomingLable" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:src="@drawable/jumpingjacks"
+        app:layout_constraintTop_toBottomOf="@id/exerciestoolbar"
+        app:layout_constraintBottom_toTopOf="@+id/tvExerciseName"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvExerciseName"
+        android:text="ExerciseName"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/flExcerciesView"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvExerciseName"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/item_circular_color_accent_broder" >
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/progresBarExercies"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_gravity="center"
+            android:background="@drawable/circular_progress_gray"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:indeterminate="false"
+            android:max="30"
+            android:progress="300"
+            android:rotation="-90" />
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/item_circular_color_accent_background">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvtimmerExercies"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                tools:text="30"/>
+        </LinearLayout>
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvExerciesStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flExcerciesView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
